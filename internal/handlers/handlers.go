@@ -10,6 +10,7 @@ type IHandler interface {
 	HealthCheck(c fiber.Ctx) error
 	SendCode(c fiber.Ctx) error
 	CheckCode(c fiber.Ctx) error
+	SaveUser(c fiber.Ctx) error
 }
 type Handler struct {
 	logger   hclog.Logger

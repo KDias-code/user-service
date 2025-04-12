@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"diplom/user-service/internal/models"
 	"diplom/user-service/internal/store"
 	"diplom/user-service/pkg/gmail"
 )
@@ -9,6 +10,7 @@ import (
 type IService interface {
 	SendCode(toGmail string) error
 	CheckCode(ctx context.Context, gmail, userCode string) (bool, error)
+	AddUser(req models.SaveUserRequest) error
 }
 type Service struct {
 	Gmail gmail.IGmail
