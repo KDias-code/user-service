@@ -11,6 +11,8 @@ type IService interface {
 	SendCode(toGmail string) error
 	CheckCode(ctx context.Context, gmail, userCode string) (bool, error)
 	AddUser(req models.SaveUserRequest) error
+	UpdateUser(req models.SaveUserRequest) error
+	GetUser(studId string) (models.SaveUserRequest, error)
 }
 type Service struct {
 	Gmail gmail.IGmail

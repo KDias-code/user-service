@@ -12,6 +12,8 @@ type IStore interface {
 	CheckCode(ctx context.Context, gmail string) (string, error)
 	SaveUser(req models.SaveUserRequest) error
 	CheckUser(studentId string) (string, error)
+	UpdateUser(req models.SaveUserRequest) error
+	GetUser(studId string) (models.SaveUserRequest, error)
 }
 type Store struct {
 	redis    *redis.Client

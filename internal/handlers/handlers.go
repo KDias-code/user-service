@@ -11,6 +11,8 @@ type IHandler interface {
 	SendCode(c fiber.Ctx) error
 	CheckCode(c fiber.Ctx) error
 	SaveUser(c fiber.Ctx) error
+	UpdateUser(c fiber.Ctx) error
+	GetUser(c fiber.Ctx) error
 }
 type Handler struct {
 	logger   hclog.Logger
